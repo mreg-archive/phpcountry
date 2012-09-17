@@ -11,6 +11,12 @@
             "email": "hannes.forsgard@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/itbz/country-list"
+        }
+    ],
     "require": {
         "php": ">=5.3.0",
         "itbz/country-list": "*"
@@ -19,11 +25,5 @@
         "psr-0": {
             "itbz\\libIsoCountries": "src/"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/itbz/country-list"
-        }
-    ]
+    }
 }
