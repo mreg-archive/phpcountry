@@ -1,5 +1,5 @@
 {
-    "name": "itbz/libIsoCountries",
+    "name": "itbz/lib-iso-countries",
     "description": "Get localized country names from ISO 3166-1 codes",
     "keywords": ["ISO 3166", "Country names"],
     "homepage": "https://github.com/itbz/libIsoCountries",
