@@ -194,7 +194,7 @@ class IsoCountries
     {
         try {
             // Try using the portion of the locale prior to .
-            list($locale) = explode('.', setlocale(LC_ALL, ''));
+            list($locale) = explode('.', setlocale(LC_ALL, 0));
             $this->setLang($locale);
         } catch (Exception $e) {
             try {
