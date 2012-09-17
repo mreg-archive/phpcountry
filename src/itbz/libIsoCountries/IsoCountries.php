@@ -116,7 +116,7 @@ class IsoCountries
         // Try to calculate data source directory from composer vendor dir
         // @codeCoverageIgnoreStart
         if (empty($this->_dataSourceDir)) {
-            $vendorDir = dirname(dirname(__DIR__));
+            $vendorDir = dirname(dirname(dirname(dirname(dirname(__DIR__)))));
             $dataSourceDir = '';
             if (file_exists($vendorDir . '/autoload.php')) {
                 $dataSourceDir = implode(
