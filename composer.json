@@ -1,0 +1,29 @@
+{
+    "name": "itbz/libIsoCountries",
+    "description": "Get localized country names from ISO 3166-1 codes",
+    "keywords": ["ISO 3166", "Country names"],
+    "homepage": "https://github.com/itbz/libIsoCountries",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hannes Forsgård",
+            "email": "hannes.forsgard@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "itbz/country-list": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "itbz\\libIsoCountries": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/itbz/country-list"
+        }
+    ]
+}
