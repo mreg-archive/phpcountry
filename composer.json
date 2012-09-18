@@ -1,8 +1,8 @@
 {
-    "name": "itbz/lib-iso-countries",
+    "name": "itbz/phpcountry",
     "description": "Get localized country names from ISO 3166-1 codes",
     "keywords": ["ISO 3166", "Country names"],
-    "homepage": "https://github.com/itbz/libIsoCountries",
+    "homepage": "https://github.com/itbz/phpcountry",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-0": {
-            "itbz\\libIsoCountries": "src/"
+            "itbz\\phpcountry": "src/"
         }
     }
 }

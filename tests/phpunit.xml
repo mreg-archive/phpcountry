@@ -1,7 +1,7 @@
 <phpunit bootstrap="bootstrap.php">
     <testsuites>
         <testsuite>
-            <directory>./libIsoCountries</directory>
+            <directory>./phpcountry</directory>
         </testsuite>
     </testsuites>
     <filter>

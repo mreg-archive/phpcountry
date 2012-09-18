@@ -1,12 +1,12 @@
 <?php
-namespace itbz\libIsoCountries;
+namespace itbz\phpcountry;
 
 define(
     'SOURCE_DIR',
     dirname(dirname(__DIR__)) . "/vendor/itbz/country-list/country"
 );
 
-class IsoCountriesTest extends \PHPUnit_Framework_TestCase
+class CountryTest extends \PHPUnit_Framework_TestCase
 {
 
     function testSetGetBackend()
