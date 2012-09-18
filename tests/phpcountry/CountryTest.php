@@ -11,7 +11,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
 
     function testSetGetBackend()
     {
-        $c = new IsoCountries;
+        $c = new Country;
         $this->assertEquals('icu', $c->getBackend());
         $c->setCldr();
         $this->assertEquals('cldr', $c->getBackend());
@@ -21,29 +21,29 @@ class CountryTest extends \PHPUnit_Framework_TestCase
 
 
     /**
-     * @expectedException \itbz\libIsoCountries\Exception
+     * @expectedException \itbz\phpcountry\Exception
      */
     function testSetDataSourceDirExcception()
     {
-         $c = new IsoCountries;
+         $c = new Country;
          $c->setDataSourceDir('not/a/vaid/dir');
     }
 
 
     function testSetGetDataSourceDir()
     {
-        $c = new IsoCountries;
+        $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $this->assertEquals(SOURCE_DIR, $c->getDataSourceDir());
     }
 
 
     /**
-     * @expectedException \itbz\libIsoCountries\Exception
+     * @expectedException \itbz\phpcountry\Exception
      */
     function testSetUknownLangException()
     {
-        $c = new IsoCountries;
+        $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->setLang('WWW');
     }
@@ -51,7 +51,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
 
     function testSetGetLanguage()
     {
-        $c = new IsoCountries;
+        $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->setLang('en');
         $this->assertEquals('en', $c->getLang());        
@@ -61,18 +61,18 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     function testSetLangFromLocale()
     {
         setlocale(LC_ALL, 'en_GB.UTF-8', 'en_US.UTF-8', 'en_GB', 'en_US', 'en');
-        $c = new IsoCountries;
+        $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->getLang();
     }
 
 
     /**
-     * @expectedException \itbz\libIsoCountries\Exception
+     * @expectedException \itbz\phpcountry\Exception
      */
     function testTranslateNoMapError()
     {
-        $c = new IsoCountries;
+        $c = new Country;
         $c->translate('se');
     }
 
@@ -80,18 +80,18 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     function testTranslateAutoMap()
     {
         setlocale(LC_ALL, 'en_GB.UTF-8', 'en_US.UTF-8', 'en_GB', 'en_US', 'en');
-        $c = new IsoCountries;
+        $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->translate('se');
     }
 
 
     /**
-     * @expectedException \itbz\libIsoCountries\TranslationException
+     * @expectedException \itbz\phpcountry\TranslationException
      */
     function testTranslateError()
     {
-        $c = new IsoCountries;
+        $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->setLang('en');
         $c->translate('sese');
@@ -100,7 +100,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
 
     function testTranslate()
     {
-        $c = new IsoCountries;
+        $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->setLang('en');
         $this->assertEquals('Sweden', $c->translate('se'));

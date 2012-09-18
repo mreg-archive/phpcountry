@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the libIsoCountries package
+ * This file is part of the phpcountry package
  *
  * Copyright (c) 2012 Hannes Forsgård
  *
@@ -9,15 +9,15 @@
  *
  * @author Hannes Forsgård <hannes.forsgard@gmail.com>
  *
- * @package libIsoCountries
+ * @package phpcountry
  */
-namespace itbz\libIsoCountries;
+namespace itbz\phpcountry;
 
 
 /**
  * Unable to translate exception
  *
- * @package libIsoCountries
+ * @package phpcountry
  */
 class TranslationException extends Exception
 {

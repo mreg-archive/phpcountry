@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the libIsoCountries package
+ * This file is part of the phpcountry package
  *
  * Copyright (c) 2012 Hannes Forsgård
  *
@@ -9,17 +9,17 @@
  *
  * @author Hannes Forsgård <hannes.forsgard@gmail.com>
  *
- * @package libIsoCountries
+ * @package phpcountry
  */
-namespace itbz\libIsoCountries;
+namespace itbz\phpcountry;
 
 
 /**
  * Get localized country names from ISO 3166-1 codes
  * 
- * @package libIsoCountries
+ * @package phpcountry
  */
-class IsoCountries
+class Country
 {
 
     /**
