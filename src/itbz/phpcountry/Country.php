@@ -8,11 +8,10 @@
  * file that was distributed with this source code.
  *
  * @author Hannes Forsgård <hannes.forsgard@gmail.com>
- *
  * @package phpcountry
  */
-namespace itbz\phpcountry;
 
+namespace itbz\phpcountry;
 
 /**
  * Get localized country names from ISO 3166-1 codes
@@ -21,37 +20,33 @@ namespace itbz\phpcountry;
  */
 class Country
 {
-
     /**
      * Array mapping ISO 3166-1 codes to country names
      *
      * @var array
      */
-    private $_isoMap;
-
+    private $isoMap;
 
     /**
      * Name of current language used
      *
      * @var string
      */
-    private $_lang = '';
-
+    private $lang = '';
 
     /**
      * Full path to the data source directory tree
      *
      * @var string
      */
-    private $_dataSourceDir = '';
-
+    private $dataSourceDir = '';
 
     /**
      * Backend used when reading from country-list
      *
      * @var string
      */
-    private $_dataBackend = 'icu';
+    private $dataBackend = 'icu';
 
     /**
      * Set ICU as data backend
@@ -60,9 +55,8 @@ class Country
      */
     public function setIcu()
     {
-        $this->_dataBackend = 'icu';
+        $this->dataBackend = 'icu';
     }
-
 
     /**
      * Set CLDR as data backend
@@ -71,10 +65,9 @@ class Country
      */
     public function setCldr()
     {
-        $this->_dataBackend = 'cldr';
+        $this->dataBackend = 'cldr';
     }
 
- 
     /**
      * Get name of data backend used
      *
@@ -82,9 +75,8 @@ class Country
      */
     public function getBackend()
     {
-        return $this->_dataBackend;
+        return $this->dataBackend;
     }
-
 
     /**
      * Set path to data source directory tree
@@ -102,9 +94,8 @@ class Country
             $msg = "Not a valid directory ($dataSourceDir).";
             throw new Exception($msg);
         }
-        $this->_dataSourceDir = $dataSourceDir;
+        $this->dataSourceDir = $dataSourceDir;
     }
-
 
     /**
      * Get path to data source directory tree
@@ -114,8 +105,7 @@ class Country
     public function getDataSourceDir()
     {
         // Try to calculate data source directory from composer vendor dir
-        // @codeCoverageIgnoreStart
-        if (empty($this->_dataSourceDir)) {
+        if (empty($this->dataSourceDir)) {
             $vendorDir = dirname(dirname(dirname(dirname(dirname(__DIR__)))));
             $dataSourceDir = '';
             if (file_exists($vendorDir . '/autoload.php')) {
@@ -131,11 +121,9 @@ class Country
             }
             $this->setDataSourceDir($dataSourceDir);
         }
-        // @codeCoverageIgnoreEnd
 
-        return $this->_dataSourceDir;
+        return $this->dataSourceDir;
     }
-
 
     /**
      * Set current language
@@ -155,7 +143,7 @@ class Country
     public function setLang($lang)
     {
         assert(is_string($lang));
-        
+
         $fname = implode(
             DIRECTORY_SEPARATOR,
             array(
@@ -173,17 +161,14 @@ class Country
 
         $isoMap = include $fname;
 
-        // @codeCoverageIgnoreStart
         if (!is_array($isoMap)) {
             $msg = "Unable to set language, datamap not an array ($fname).";
             throw new Exception($msg);
         }
-        // @codeCoverageIgnoreEnd
 
-        $this->_isoMap = $isoMap;
-        $this->_lang = $lang;
+        $this->isoMap = $isoMap;
+        $this->lang = $lang;
     }
-
 
     /**
      * Try to set language from current locale
@@ -206,7 +191,6 @@ class Country
         }
     }
 
-
     /**
      * Get current language
      *
@@ -214,11 +198,11 @@ class Country
      */
     public function getLang()
     {
-        if (empty($this->_lang)) {
+        if (empty($this->lang)) {
             $this->setLangFromLocale();
         }
 
-        return $this->_lang;
+        return $this->lang;
     }
 
 
@@ -230,7 +214,6 @@ class Country
      * @return string
      *
      * @throws Exception if no language is specified
-     *
      * @throws TranslationException if no translation exists
      */
     public function translate($isoCode)
@@ -238,11 +221,11 @@ class Country
         assert(is_string($isoCode));
 
         // Try to set language from locale if we have no map
-        if (!isset($this->_isoMap)) {
+        if (!isset($this->isoMap)) {
             $this->setLangFromLocale();
 
             // Still no map? This is an error.
-            if (!isset($this->_isoMap)) {
+            if (!isset($this->isoMap)) {
                 $msg = "Unable to translate, no language specified.";
                 throw new Exception($msg);
             }
@@ -250,12 +233,11 @@ class Country
 
         $isoCode = strtoupper($isoCode);
 
-        if (!isset($this->_isoMap[$isoCode])) {
+        if (!isset($this->isoMap[$isoCode])) {
             $msg = "Unable to translate '$isoCode'.";
             throw new TranslationException($msg);
         }
 
-        return $this->_isoMap[$isoCode];
+        return $this->isoMap[$isoCode];
     }
-
 }

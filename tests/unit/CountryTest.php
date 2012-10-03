@@ -8,8 +8,7 @@ define(
 
 class CountryTest extends \PHPUnit_Framework_TestCase
 {
-
-    function testSetGetBackend()
+    public function testSetGetBackend()
     {
         $c = new Country;
         $this->assertEquals('icu', $c->getBackend());
@@ -19,46 +18,41 @@ class CountryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('icu', $c->getBackend());
     }
 
-
     /**
      * @expectedException \itbz\phpcountry\Exception
      */
-    function testSetDataSourceDirExcception()
+    public function testSetDataSourceDirExcception()
     {
          $c = new Country;
          $c->setDataSourceDir('not/a/vaid/dir');
     }
 
-
-    function testSetGetDataSourceDir()
+    public function testSetGetDataSourceDir()
     {
         $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $this->assertEquals(SOURCE_DIR, $c->getDataSourceDir());
     }
 
-
     /**
      * @expectedException \itbz\phpcountry\Exception
      */
-    function testSetUknownLangException()
+    public function testSetUknownLangException()
     {
         $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->setLang('WWW');
     }
 
-
-    function testSetGetLanguage()
+    public function testSetGetLanguage()
     {
         $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->setLang('en');
-        $this->assertEquals('en', $c->getLang());        
+        $this->assertEquals('en', $c->getLang());
     }
 
-
-    function testSetLangFromLocale()
+    public function testSetLangFromLocale()
     {
         setlocale(LC_ALL, 'en_GB.UTF-8', 'en_US.UTF-8', 'en_GB', 'en_US', 'en');
         $c = new Country;
@@ -66,18 +60,16 @@ class CountryTest extends \PHPUnit_Framework_TestCase
         $c->getLang();
     }
 
-
     /**
      * @expectedException \itbz\phpcountry\Exception
      */
-    function testTranslateNoMapError()
+    public function testTranslateNoMapError()
     {
         $c = new Country;
         $c->translate('se');
     }
 
-
-    function testTranslateAutoMap()
+    public function testTranslateAutoMap()
     {
         setlocale(LC_ALL, 'en_GB.UTF-8', 'en_US.UTF-8', 'en_GB', 'en_US', 'en');
         $c = new Country;
@@ -85,11 +77,10 @@ class CountryTest extends \PHPUnit_Framework_TestCase
         $c->translate('se');
     }
 
-
     /**
      * @expectedException \itbz\phpcountry\TranslationException
      */
-    function testTranslateError()
+    public function testTranslateError()
     {
         $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
@@ -97,13 +88,11 @@ class CountryTest extends \PHPUnit_Framework_TestCase
         $c->translate('sese');
     }
 
-
-    function testTranslate()
+    public function testTranslate()
     {
         $c = new Country;
         $c->setDataSourceDir(SOURCE_DIR);
         $c->setLang('en');
         $this->assertEquals('Sweden', $c->translate('se'));
     }
-
 }

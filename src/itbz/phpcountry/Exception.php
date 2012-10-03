@@ -11,8 +11,8 @@
  *
  * @package phpcountry
  */
-namespace itbz\phpcountry;
 
+namespace itbz\phpcountry;
 
 /**
  * phpcountry base exception
