@@ -21,3 +21,13 @@ you install using *composer* this problem is mitigated.
 
     // outputs: Sweden
     echo $iso3166->translate('se');
+
+## Installing using composer
+
+phpcountry can be installed using the default packagist repository. phpcountry
+uses a development version of umpirsky/country-list. For this to work you must
+set
+
+    "minimum-stability": "dev"
+
+In your composer.json
