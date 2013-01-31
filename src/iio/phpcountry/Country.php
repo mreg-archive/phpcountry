@@ -6,9 +6,6 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * @author Hannes Forsgård <hannes.forsgard@gmail.com>
- * @package phpcountry
  */
 
 namespace iio\phpcountry;
@@ -16,35 +13,28 @@ namespace iio\phpcountry;
 /**
  * Get localized country names from ISO 3166-1 codes
  * 
+ * @author  Hannes Forsgård <hannes.forsgard@gmail.com>
  * @package phpcountry
  */
 class Country
 {
     /**
-     * Array mapping ISO 3166-1 codes to country names
-     *
-     * @var array
+     * @var array Array mapping ISO 3166-1 codes to country names
      */
     private $isoMap;
 
     /**
-     * Name of current language used
-     *
-     * @var string
+     * @var string Name of current language used
      */
     private $lang = '';
 
     /**
-     * Full path to the data source directory tree
-     *
-     * @var string
+     * @var string Full path to the data source directory tree
      */
     private $dataSourceDir = '';
 
     /**
-     * Backend used when reading from country-list
-     *
-     * @var string
+     * @var string Backend used when reading from country-list
      */
     private $dataBackend = 'icu';
 
@@ -81,11 +71,9 @@ class Country
     /**
      * Set path to data source directory tree
      *
-     * @param string $dataSourceDir
-     *
-     * @return void
-     *
+     * @param  string    $dataSourceDir
      * @throws Exception if $dataSourceDir is not a valid directory
+     * @return void
      */
     public function setDataSourceDir($dataSourceDir)
     {
@@ -134,11 +122,9 @@ class Country
      *
      * Note that the language code is case sensitive.
      *
-     * @param string $lang Code for language to use.
-     *
-     * @return void
-     *
+     * @param  string    $lang Code for language to use.
      * @throws Exception if language is unknown or unvalid
+     * @return void
      */
     public function setLang($lang)
     {
@@ -209,12 +195,10 @@ class Country
     /**
      * Translate a ISO 3166-1 code to country name
      *
-     * @param string $isoCode
-     *
-     * @return string
-     *
-     * @throws Exception if no language is specified
+     * @param  string               $isoCode
+     * @throws Exception            if no language is specified
      * @throws TranslationException if no translation exists
+     * @return string
      */
     public function translate($isoCode)
     {

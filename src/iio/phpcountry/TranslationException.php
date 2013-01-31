@@ -6,9 +6,6 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * @author Hannes Forsgård <hannes.forsgard@gmail.com>
- * @package phpcountry
  */
 
 namespace iio\phpcountry;
@@ -16,6 +13,7 @@ namespace iio\phpcountry;
 /**
  * Unable to translate exception
  *
+ * @author  Hannes Forsgård <hannes.forsgard@gmail.com>
  * @package phpcountry
  */
 class TranslationException extends Exception
