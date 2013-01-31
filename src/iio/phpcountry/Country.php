@@ -11,7 +11,7 @@
  * @package phpcountry
  */
 
-namespace itbz\phpcountry;
+namespace iio\phpcountry;
 
 /**
  * Get localized country names from ISO 3166-1 codes
@@ -113,7 +113,7 @@ class Country
                     DIRECTORY_SEPARATOR,
                     array(
                         $vendorDir,
-                        'itbz',
+                        'iio',
                         'country-list',
                         'country'
                     )

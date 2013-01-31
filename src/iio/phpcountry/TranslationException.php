@@ -11,7 +11,7 @@
  * @package phpcountry
  */
 
-namespace itbz\phpcountry;
+namespace iio\phpcountry;
 
 /**
  * Unable to translate exception

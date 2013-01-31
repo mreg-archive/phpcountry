@@ -3,13 +3,13 @@ phpcountry
 
 Get localized country names from ISO 3166-1 codes
 
-Uses a clone of *umpirsky/country-list* to translate ISO 3166-1 country codes
+Uses *umpirsky/country-list* to translate ISO 3166-1 country codes
 to country names using various languages.
 
 phpcountry needs to know the path to country-lists's data collection. If
 you install using *composer* this problem is mitigated.
 
-    $iso3166 = new \itbz\phpcountry\Country;
+    $iso3166 = new \iio\phpcountry\Country;
 
     // only needed if you installed country-list to a costum location
     // (eg. did not use composer)
@@ -21,6 +21,3 @@ you install using *composer* this problem is mitigated.
 
     // outputs: Sweden
     echo $iso3166->translate('se');
-
-For more in-depth documentation visit
-http://itbz.github.com/classes/itbz.phpcountry.Country.html

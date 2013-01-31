@@ -1,9 +1,9 @@
 <?php
-namespace itbz\phpcountry;
+namespace iio\phpcountry;
 
 define(
     'SOURCE_DIR',
-    dirname(dirname(__DIR__)) . "/vendor/itbz/country-list/country"
+    dirname(dirname(__DIR__)) . "/vendor/iio/country-list/country"
 );
 
 class CountryTest extends \PHPUnit_Framework_TestCase
@@ -19,7 +19,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \itbz\phpcountry\Exception
+     * @expectedException \iio\phpcountry\Exception
      */
     public function testSetDataSourceDirExcception()
     {
@@ -35,7 +35,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \itbz\phpcountry\Exception
+     * @expectedException \iio\phpcountry\Exception
      */
     public function testSetUknownLangException()
     {
@@ -61,7 +61,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \itbz\phpcountry\Exception
+     * @expectedException \iio\phpcountry\Exception
      */
     public function testTranslateNoMapError()
     {
@@ -78,7 +78,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \itbz\phpcountry\TranslationException
+     * @expectedException \iio\phpcountry\TranslationException
      */
     public function testTranslateError()
     {
