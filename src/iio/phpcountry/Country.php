@@ -113,7 +113,7 @@ class Country
                     DIRECTORY_SEPARATOR,
                     array(
                         $vendorDir,
-                        'iio',
+                        'umpirsky',
                         'country-list',
                         'country'
                     )

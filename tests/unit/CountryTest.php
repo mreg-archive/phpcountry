@@ -3,7 +3,7 @@ namespace iio\phpcountry;
 
 define(
     'SOURCE_DIR',
-    dirname(dirname(__DIR__)) . "/vendor/iio/country-list/country"
+    dirname(dirname(__DIR__)) . "/vendor/umpirsky/country-list/country"
 );
 
 class CountryTest extends \PHPUnit_Framework_TestCase
