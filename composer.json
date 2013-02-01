@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "umpirsky/country-list": "dev-master"
+        "umpirsky/country-list": "1.*"
     },
     "autoload": {
         "psr-0": {
