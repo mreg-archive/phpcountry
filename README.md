@@ -4,30 +4,33 @@ phpcountry
 Get localized country names from ISO 3166-1 codes
 
 Uses *umpirsky/country-list* to translate ISO 3166-1 country codes
-to country names using various languages.
+to country names.
 
 phpcountry needs to know the path to country-lists's data collection. If
 you install using *composer* this problem is mitigated.
 
-    $iso3166 = new \iio\phpcountry\Country;
+    $country = new \iio\phpcountry\Country;
 
     // only needed if you installed country-list to a costum location
     // (eg. did not use composer)
-    $iso3166->setDataSourceDir('path/to/country-list/country');
+    $country->setDataSourceDir('path/to/country-list/country');
 
     // only needed if you do not want phpcountry to use the
     // current locale setting
-    $iso3166->setLang('en');
+    $country->setLang('en');
 
     // outputs: Sweden
-    echo $iso3166->translate('se');
+    echo $country->translate('se');
 
-## Installing using composer
 
-phpcountry can be installed using the default packagist repository. phpcountry
-uses a development version of umpirsky/country-list. For this to work you must
-set
+## Running the unit tests
 
-    "minimum-stability": "dev"
+To run the tests you must install the dependencies.
 
-In your composer.json
+    > curl -s https://getcomposer.org/installer | php
+    > php composer.phar install
+
+    > phpunit tests
+
+If you have Phing installed just type *phing* to install dependencies and run
+code analysis. Point your browser to *build/index.html* to view the results.
