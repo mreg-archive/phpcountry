@@ -6,8 +6,8 @@ Get localized country names from ISO 3166-1 codes
 
 ## Deprecated
 
-This package has been discontinued in favor of LocaleFacade. For corresponding
-functionality use
+This package has been discontinued in favor of [LocaleFacade](https://github.com/iio/localefacade).
+For corresponding functionality use
 
     echo (new LocaleFacade('de'))->getDisplayCountries()['SE'];
 
