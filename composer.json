@@ -1,7 +1,7 @@
 {
     "name": "iio/phpcountry",
-    "description": "Get localized country names from ISO 3166-1 codes",
-    "keywords": ["ISO 3166", "Country names"],
+    "description": "[Deprecated] Get localized country names from ISO 3166-1 codes",
+    "keywords": ["ISO 3166"],
     "homepage": "https://github.com/iio/phpcountry",
     "type": "library",
     "license": "MIT",
